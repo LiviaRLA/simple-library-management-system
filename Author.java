@@ -25,11 +25,11 @@ public class Author {
     }
 
     public void setName(String name) {
-        name = this.name;
+        this.name = name;
     }
 
     public void setBirthDate(Date birthDate) {
-        birthDate = this.birthDate;
+        this.birthDate = birthDate;
     }
     
 }
