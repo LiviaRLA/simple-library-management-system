@@ -31,5 +31,14 @@ public class Author {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        return "Author {" +
+                "\nid= " + id +
+                "\nnome= " + name +
+                "\nbirthDate= " + birthDate +
+                "\n}";
+    }
     
 }

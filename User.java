@@ -40,5 +40,15 @@ public class User {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
+
+    @Override
+    public String toString() {
+        return "User {" +
+                "\nid= " + id +
+                "\nname= " + name +
+                "\nemail= " + email +
+                "\nbirthDate= " + birthDate +
+                "\n}";
+    }
     
 }

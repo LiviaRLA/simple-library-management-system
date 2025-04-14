@@ -3,17 +3,19 @@ import java.util.Date;
 public class Loan {
 
     private int id;
+    private static int countId=1;
     private User user;
     private Book book;
     private Date loanDate;
     private Date returnDate;
+    private boolean active;
     
-    public Loan(int id, User user, Book book, Date loanDate, Date returnDate) {
-        this.id = id;
+    public Loan(Book book, User user) {
+        this.id = countId++;
         this.user = user;
         this.book = book;
         this.loanDate = new Date();
-        this.returnDate = returnDate;
+        this.active = true;
     }
 
     public int getId() {
@@ -36,16 +38,26 @@ public class Loan {
         return returnDate;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setLoanDate(Date loanDate) {
-        this.loanDate = loanDate;
+    public void returnBook() {
+        this.returnDate = new Date();
+        this.active = false;
+        this.book.setAvailable(true);
     }
 
-    public void setReturnDate(Date returnDate) {
-        this.returnDate = returnDate;
+    @Override
+    public String toString() {
+        return "Loan {" +
+                "\nid= " + id +
+                "\nbook= " + book +
+                "\nuser= " + user +
+                "\nloanDate= " + loanDate +
+                "\nreturnDate= " + returnDate +
+                "\nactive= " + active +
+                "\n}";
     }
     
 }
